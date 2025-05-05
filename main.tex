@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{report}
+
+% ======== Packages ========
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{caption}
+
+% ======== Page Setup ========
+\geometry{margin=2.5cm}
+\onehalfspacing
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+
+% ======== Title Info ========
+\title{\textbf{Project Title}\\\large Final Year Project Report}
+\author{Author Name \\
+Supervisor: Dr. Someone}
+\date{\today}
+
+% ======== Document ========
+\begin{document}
+
+% Title Page
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% Table of Contents
+\tableofcontents
+\clearpage
+
+% ========== Chapters ==========
+
+\chapter{Introduction}
+This chapter introduces the background and objectives of the project.
+
+\chapter{State of the Art}
+A review of related work and technologies relevant to the topic.
+
+\chapter{System Design}
+Explanation of the architecture, methods, and models used.
+
+\chapter{Implementation}
+Details about the development, tools, and challenges faced.
+
+\chapter{Results and Analysis}
+Presentation and discussion of results.
+
+\chapter{Conclusion}
+Summary of the project, achievements, and future work.
+
+% Bibliography
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
