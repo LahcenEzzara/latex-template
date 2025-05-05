@@ -1,68 +1,239 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Academic Report/Thesis Template
+% Everything in one file for simplicity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[12pt,a4paper]{report}
 
 % ======== Packages ========
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage{lmodern}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb}
-\usepackage{hyperref}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{setspace}
-\usepackage{caption}
+\usepackage[utf8]{inputenc}       % Input encoding
+\usepackage[T1]{fontenc}          % Font encoding
+\usepackage[english]{babel}       % Language
+\usepackage{lmodern}              % Latin Modern font
+\usepackage{microtype}            % Better typography
+\usepackage{graphicx}             % Include graphics
+\usepackage{amsmath,amssymb}      % Math symbols
+\usepackage{booktabs}             % Professional tables
+\usepackage{enumitem}             % Better lists
+\usepackage{geometry}             % Page layout
+\usepackage{fancyhdr}             % Headers and footers
+\usepackage{setspace}             % Line spacing
+\usepackage{caption}              % Caption customization
+\usepackage{xcolor}               % Colors
+\usepackage{listings}             % Code listings
+\usepackage{hyperref}             % Hyperlinks - load this last
 
 % ======== Page Setup ========
-\geometry{margin=2.5cm}
-\onehalfspacing
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\leftmark}
-\fancyhead[R]{\thepage}
+\geometry{margin=2.5cm}           % Set margins
+\setlength{\headheight}{14.5pt}   % Fix for fancyhdr height error
+\addtolength{\topmargin}{-2.5pt}  % Compensate for increased header height
+\onehalfspacing                   % 1.5 line spacing
+\pagestyle{fancy}                 % Use fancy page style
+\fancyhf{}                        % Clear header/footer
+\fancyhead[L]{\leftmark}          % Chapter name on left
+\fancyhead[R]{\thepage}           % Page number on right
+\renewcommand{\headrulewidth}{0.4pt} % Header line
+\setlength{\parindent}{0pt}       % No paragraph indentation
+\setlength{\parskip}{1em}         % Paragraph spacing
+
+% ======== Hyperref Setup ========
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% ======== Code Listing Setup ========
+\lstset{
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    commentstyle=\color{green!50!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    frame=single,
+    showstringspaces=false
+}
 
 % ======== Title Info ========
-\title{\textbf{Project Title}\\\large Final Year Project Report}
-\author{Author Name \\
-Supervisor: Dr. Someone}
+\title{
+    \LARGE\textbf{Project Title}\\
+    \vspace{0.5cm}
+    \large Final Year Project Report
+}
+
+\author{
+    Author Name\\
+    \vspace{0.3cm}
+    Supervisor: Dr. Someone\\
+    Department Name\\
+    University Name
+}
+
 \date{\today}
 
 % ======== Document ========
 \begin{document}
 
-% Title Page
+% ==== Title Page ====
 \maketitle
 \thispagestyle{empty}
-\clearpage
 
-% Table of Contents
+% ==== Abstract ====
+\begin{abstract}
+    This document presents the development and implementation of [your project]. 
+    The project addresses [problem statement] by [brief description of approach].
+    Results demonstrate [brief summary of findings and significance].
+\end{abstract}
+
+% ==== Table of Contents ====
 \tableofcontents
 \clearpage
 
-% ========== Chapters ==========
-
+% ========== Chapter 1: Introduction ==========
 \chapter{Introduction}
+
 This chapter introduces the background and objectives of the project.
 
+\section{Background}
+Background information about the problem domain and context.
+
+\section{Problem Statement}
+Clearly state the problem being addressed in this project.
+
+\section{Objectives}
+List and explain the main objectives of the project:
+
+\begin{itemize}
+    \item To investigate...
+    \item To develop...
+    \item To evaluate...
+\end{itemize}
+
+\section{Report Structure}
+Provide an overview of the structure of this report.
+
+% ========== Chapter 2: State of the Art ==========
 \chapter{State of the Art}
+
 A review of related work and technologies relevant to the topic.
 
+\section{Literature Review}
+Review of key research papers and publications. For example, Smith et al. \cite{example} proposed...
+
+\section{Existing Solutions}
+Analysis of current solutions and their limitations.
+
+\section{Theoretical Background}
+Key theories and concepts that underpin this project.
+
+% Example figure placeholder - with improved float positioning
+\begin{figure}[htbp]
+    \centering
+    \framebox{\rule{0cm}{5cm}\rule{10cm}{0cm}}
+    \caption{Example figure caption}
+    \label{fig:example}
+\end{figure}
+
+% ========== Chapter 3: System Design ==========
 \chapter{System Design}
+
 Explanation of the architecture, methods, and models used.
 
+\section{System Architecture}
+Overview of the system architecture.
+
+\section{Design Decisions}
+Explanation of key design decisions and their rationales.
+
+\section{Mathematical Model}
+If applicable, present the mathematical model:
+
+\begin{equation}
+    f(x) = \sum_{i=1}^{n} w_i \cdot x_i + b
+    \label{eq:model}
+\end{equation}
+
+% ========== Chapter 4: Implementation ==========
 \chapter{Implementation}
+
 Details about the development, tools, and challenges faced.
 
+\section{Development Environment}
+Description of tools, libraries, and frameworks used.
+
+\section{Implementation Details}
+Technical details of the implementation.
+
+% Example code listing
+\begin{lstlisting}[language=Python, caption=Example Python code]
+def process_data(data):
+    """Process the input data and return results"""
+    results = {}
+    for item in data:
+        results[item.id] = item.value * 2
+    return results
+\end{lstlisting}
+
+\section{Challenges and Solutions}
+Discussion of challenges encountered during implementation and how they were addressed.
+
+% ========== Chapter 5: Results and Analysis ==========
 \chapter{Results and Analysis}
+
 Presentation and discussion of results.
 
+\section{Experimental Setup}
+Description of the experimental setup and methodology.
+
+\section{Results}
+Presentation of results.
+
+% Example table - with improved float positioning
+\begin{table}[htbp]
+\centering
+\caption{Example performance comparison}
+\label{tab:results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Method} & \textbf{Accuracy (\%)} & \textbf{Time (s)} & \textbf{Memory (MB)} \\
+\midrule
+Baseline & 85.2 & 1.45 & 256 \\
+Proposed & 92.7 & 0.95 & 280 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Analysis and Discussion}
+Analysis and interpretation of the results.
+
+% ========== Chapter 6: Conclusion ==========
 \chapter{Conclusion}
+
 Summary of the project, achievements, and future work.
 
-% Bibliography
+\section{Summary}
+Summary of the work done and main findings.
+
+\section{Contributions}
+Highlight the main contributions of this work.
+
+\section{Future Work}
+Suggestions for future improvements and extensions.
+
+% ==== Bibliography ====
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{plain}
 \bibliography{references}
+% Note: You'll need a separate references.bib file or uncomment and use this simple bibliography:
+\begin{thebibliography}{9}
+\bibitem{example} Smith, J., Johnson, A., "Example Paper Title", Journal of Examples, 2023.
+\end{thebibliography}
+
+% ==== Appendices ====
+\appendix
+\chapter{Additional Material}
+Additional information, code listings, or data that support the main text.
 
 \end{document}
